@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import device from '../../shared/device/device';
-import HeroPattern from '../../ui/Hero/HeroPattern';
+import HeroPattern from '../Hero/HeroPattern';
 
 const Container = styled.div`
   position: relative;

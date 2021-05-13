@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import Link from 'next/link';
-// import { NavLink, useLocation } from "react-router-dom";
+import { useRouter } from 'next/router'; 
 import { ThemeContext } from 'styled-components';
 
-const NavLi = styled(Link)`
+const NavLi = styled("div")`
   box-sizing: border-box;
   display: block;
   text-align: left;
@@ -23,16 +23,16 @@ const NavLi = styled(Link)`
 `;
 
 const NavigationItem = React.forwardRef(({link, children }, ref) => {
-  const location = useLocation();
-  const active = location.pathname === link;
+  const location = useRouter();
+  const active = location.asPath === link;
   
   const themeContext = useContext(ThemeContext);
 
   const startColor = active ? themeContext.colors.highlight : themeContext.colors.primary;
 
   return (
-    <NavLi to={link}
-    activeClassName="Active"
+    <Link href={link} scroll={false}>
+    <NavLi
     ref={ref}
     style={{color: startColor}}
     >
@@ -40,6 +40,7 @@ const NavigationItem = React.forwardRef(({link, children }, ref) => {
       {children}
       </h2>
     </NavLi>
+    </Link>
 )});
 
 export default NavigationItem;

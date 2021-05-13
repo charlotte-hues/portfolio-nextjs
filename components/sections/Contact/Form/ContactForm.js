@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import emailjs from 'emailjs-com';
+// import emailjs from 'emailjs-com';
 
 import blankForm from './blankContactForm';
 import TextInput from '../../../ui/Inputs/TextInput';
@@ -54,12 +54,12 @@ const ContactForm = () => {
       formData[formEl] = contactForm[formEl].value;
     }
 
-    emailjs.send("default_service", "portfolioSiteTemplate", formData, "user_bveJBfqBpdxSpDQGU6thD")
-        .then((result) => {
-            setFormSuccess(true);
-        }, (error) => {
-            setFormError(true);
-      });
+    // emailjs.send("default_service", "portfolioSiteTemplate", formData, "user_bveJBfqBpdxSpDQGU6thD")
+    //     .then((result) => {
+    //         setFormSuccess(true);
+    //     }, (error) => {
+    //         setFormError(true);
+    //   });
   };
 
   const SuccessModal = (

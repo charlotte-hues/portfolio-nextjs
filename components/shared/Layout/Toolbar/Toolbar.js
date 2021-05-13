@@ -37,7 +37,7 @@ const Links = styled.div`
 const Toolbar = React.memo(({ openMenu }) => {
   return (
     <Header >
-      <Link href="/">
+      <Link href="/home" scroll={false}>
         <Home>CHARLOTTE HUGHES</Home>
       </Link>
       <Links>

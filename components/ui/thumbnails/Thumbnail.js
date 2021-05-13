@@ -1,12 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import styled from "styled-components";
 
 import * as images from './thumbnailImages';
 import Arrow from '../Icons/ArrowIcon';
 import device from '../../shared/device/device';
 
-const StyledLink = styled(Link)`
+const Container = styled.div`
+  position: relative;
+  width: 100%;
+
+
+   
   margin: 20px 0 40px;
   overflow: hidden;
   max-width: 600px;
@@ -15,10 +20,6 @@ const StyledLink = styled(Link)`
   @media ${device.laptop} {
     align-self: ${props => props.align}
   }
-`; 
-
-const Container = styled.div`
-  position: relative; 
 `;
 
 const DetailsContainer = styled.div`
@@ -47,6 +48,7 @@ const Title = styled.h2`
 `;
 
 const Thumbnail = styled.div`
+  position: relative;
   width: 100%;
   height: 300px;
   background-color: ${({theme}) => theme.colors.background};
@@ -66,8 +68,8 @@ const ProjectThumb = ({ link, i, year, title, image, align}) => {
   let line2 = titleArr.slice(index, titleArr.length).join(" ").toUpperCase();
   
   return (
-    <StyledLink to={link} align={align}>
-      <Container >
+    <Link href={link}>
+      <Container align={align}>
         <DetailsContainer>
           <SideDetails>
             <h3>.0{i}</h3>
@@ -80,7 +82,7 @@ const ProjectThumb = ({ link, i, year, title, image, align}) => {
           {images[image]}
         </Thumbnail>
       </Container>
-    </StyledLink>
+    </Link>
   );
 };
 

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-// import MenuNavigationItems from "../../ui/navigation/MenuNavigationItems";
+import MenuNavigationItems from "../../ui/navigation/MenuNavigationItems";
 import ContactLinks from '../Contact/Links/ContactLinks';
 import MenuIcon from '../../ui/Icons/CloseIcon';
 
@@ -40,7 +40,7 @@ const Menu = ({close}) => {
   }} >
                 <MenuIcon/>
             </div>
-            {/* <MenuNavigationItems close={close} /> */}
+            <MenuNavigationItems close={close} />
             <ContactLinks/>
         </StyledMenu>)
 }

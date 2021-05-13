@@ -1,9 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import Link from 'next/link';
+import {useRouter} from 'next/router'
+;
 import device from '../../../shared/device/device';
 
-const NavLi = styled(Link)`
+const NavLi = styled("div")`
   display: none;
   box-sizing: border-box;
   text-align: left;
@@ -29,15 +31,19 @@ const NavLi = styled(Link)`
 `;
 
 const ToolbarNavItem = ({link, children }) => {
-  
+  const location = useRouter();
+  const active = location.asPath === link;
+
   return (
-    <NavLi href={link}
-    activeClassName="Active"
+    <Link href={link} scroll={false} >
+    <NavLi 
+    className={active ? "Active" : null}
     >
       <h2>
       {children}
       </h2>
     </NavLi>
+    </Link>
 )};
 
 export default ToolbarNavItem;

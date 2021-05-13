@@ -1,11 +1,11 @@
 import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
-// import { useLocation } from "react-router-dom";
+import {useRouter} from 'next/router'
 import gsap from 'gsap';
 
 import About from "../About/About";
-// import Work from "../Work/Work";
-// import Contact from "../Contact/Contact";
+import Work from "../Work/Work";
+import Contact from "../Contact/Contact";
 
 
 const SectionContainer = styled.div`
@@ -19,17 +19,17 @@ const Home = props => {
   const contactRef = useRef(null);
   const homeRef = useRef(null);
   const workRef = useRef(null);
-  // const location = useLocation();
+  const location = useRouter();
 
-  // useEffect(() => {
-  //   if (location.pathname === "/contact") {
-  //     scrollToRef("#contact", 110);
-  //   } else if (location.pathname === "/work") {
-  //     scrollToRef("#work", 0);
-  //   } else {
-  //     scrollToRef("#home", 110);
-  //   }
-  // });
+  useEffect(() => {
+    if (location.asPath === "/contact") {
+      scrollToRef("#contact", 110);
+    } else if (location.asPath === "/work") {
+      scrollToRef("#work", 0);
+    } else {
+      scrollToRef("#home", 110);
+    }
+  });
 
   return (
     <div>
@@ -37,10 +37,10 @@ const Home = props => {
         <About />
       </SectionContainer>
       <SectionContainer id="work" ref={workRef}>
-        {/* <Work /> */}
+        <Work />
       </SectionContainer>
       <SectionContainer id="contact" ref={contactRef}>
-        {/* <Contact /> */}
+        <Contact />
       </SectionContainer>
     </div>
   );
