@@ -4,7 +4,7 @@ async function sendMail(req) {
   require('dotenv').config()
   let nodemailer = require('nodemailer')
   const transporter = nodemailer.createTransport({
-    port: 465999,
+    port: 465,
     host: "smtp.gmail.com",
     auth: {
       user: 'charlottehughesportfolio@gmail.com',
@@ -28,18 +28,10 @@ async function handler(req, res) {
 
   try {
     await sendMail(req);
-    console.log("SUCCESS")
   } catch (error) {
-    console.log("ERROR")
     res.status(500).json({message: "Send email failed"});
     return;
   }
-  
-  // res.send('success');
-
-  // transporter.sendMail(mailData)
-  // .then(data => res.status(200))
-  // .catch(err => res.status(500))
 
   res.status(200).json({message: "sent email"});
 }

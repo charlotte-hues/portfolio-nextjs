@@ -37,6 +37,8 @@ const ContactForm = (props) => {
 
   useEffect(() => props.contactForm.formSuccess && clearForm(), [props.contactForm.formSuccess])
 
+  useEffect(() => props.contactForm.formError && setFormIsValid(true), [props.contactForm.formError])
+
   const inputChangedHandler = (e, input) => {
     const [valid, errors] = checkValidity(
       e.target.value, 
