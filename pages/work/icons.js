@@ -53,7 +53,16 @@ const IconsProject = () => {
     return arr.concat(el);
   }, []);
 
-  return <>{IconSets}</>;
+  return <>
+  <Head>
+        <meta
+            name="description"
+            content="A collection of icons created by Charlotte Hughes for various projects"
+          />
+          <title>Icon Collection</title>
+        </Head>
+  {IconSets}
+  </>;
 };
 
 export default IconsProject;
