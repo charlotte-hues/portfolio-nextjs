@@ -7,7 +7,6 @@ const ProjectCard = styled.div`
   margin: 20px auto;
   max-width: 730px;
   min-height: 240px;
-  background-color: #e5e5e5;
 
   & img {
         height: auto;

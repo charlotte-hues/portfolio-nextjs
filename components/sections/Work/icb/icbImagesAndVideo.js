@@ -1,23 +1,25 @@
 import Image from 'next/image';
 
 export const Logo = (
-<video autoPlay muted loop poster="/images/project/icb/logoPoster.png" >
-    <source src="/images/project/icb/logo.webm" type="video/webm" /> 
-    <source src="/images/project/icb/logo.mp4" type="video/mp4" /> 
+<video autoPlay muted loop poster="/images/projects/icb/logoPoster.png" >
+    <source src="/images/projects/icb/logo.webm" type="video/webm" /> 
+    <source src="/images/projects/icb/logo.mp4" type="video/mp4" /> 
 </video>
 )
 
 export const Patterns = (
-    <video autoPlay muted loop poster="/images/project/icb/patternsPoster.png" >
-        <source src="/images/project/icb/patterns.webm" type="video/webm" /> 
-        <source src="/images/project/icb/patterns.mp4" type="video/mp4" />
+    <video autoPlay muted loop poster="/images/projects/icb/patternsPoster.png" >
+        <source src="/images/projects/icb/patterns.webm" type="video/webm" /> 
+        <source src="./images/projects/icb/patterns.mp4" type="video/mp4" />
     </video>
     )
+
 
 export const MockUp = <Image width="730" height="548"
 src="/images/projects/icb/Horizontal.jpg" title='App Screens' 
 description="The Infinite Coloring Book App Screens"
 alt="The Infinite Coloring Book App Screens"
+priority={true} 
 /> 
 
 export const InfiniteCombinations = <Image width="730" height="548"

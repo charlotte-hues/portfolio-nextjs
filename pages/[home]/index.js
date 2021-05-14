@@ -5,9 +5,3 @@ export default function Home() {
     <Homepage />
   )
 }
-
-
-// href={{
-//     pathname: '/about',
-//     query: { name: 'test' },
-//   }}

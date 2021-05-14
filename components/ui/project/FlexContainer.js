@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import device from '../../../hoc/device/device';
+import device from '../../shared/device/device';
 
 const FlexContainer = styled.div`
     display: flex;
