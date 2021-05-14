@@ -1,8 +1,12 @@
 import Head from 'next/head';
 
 import Homepage from '../components/sections/Home/Home';
+import useContactForm from '../components/shared/ContactFormHook';
 
 export default function Home() {
+
+  const contactForm = useContactForm();
+
   return (
     <>
     <Head>
@@ -12,7 +16,7 @@ export default function Home() {
       />
       <title>Charlotte Hughes</title>
     </Head>
-    <Homepage />
+    <Homepage contactForm={contactForm} />
     </>
   )
 }

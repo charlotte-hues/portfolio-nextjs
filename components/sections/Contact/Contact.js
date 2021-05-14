@@ -18,7 +18,6 @@ const Container = styled.div`
 `;
 
 const Contact = (props) => {
-  console.log("rendered")
   return (
     <Container>
       <hr/>
@@ -26,7 +25,7 @@ const Contact = (props) => {
       <ContactLinks/>
       <hr/>
       <h3>GET IN TOUCH</h3>
-      <ContactForm onContactSubmit={props.onContactSubmit} formSuccess={props.formSuccess} />
+      <ContactForm contactForm={props.contactForm} />
     </Container>
   );
 };

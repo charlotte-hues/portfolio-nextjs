@@ -21,15 +21,17 @@ const Home = props => {
   const workRef = useRef(null);
   const location = useRouter();
 
-  useEffect(() => {
-    if (location.asPath === "/contact") {
-      scrollToRef("#contact", 110);
-    } else if (location.asPath === "/work") {
-      scrollToRef("#work", 0);
-    } else {
-      scrollToRef("#home", 110);
-    }
-  });
+  useEffect(() => {   
+      if (location.asPath === "/contact") {
+        scrollToRef("#contact", 110);
+      } else if (location.asPath === "/work") {
+        console.log("workd")
+        scrollToRef("#work", 0);
+      } else {
+        scrollToRef("#home", 110);
+      }
+  }, [location]
+  );
 
   return (
     <div>
@@ -40,7 +42,7 @@ const Home = props => {
         <Work />
       </SectionContainer>
       <SectionContainer id="contact" ref={contactRef}>
-        <Contact onContactSubmit={props.onContactSubmit} formSuccess={props.formSuccess}/>
+        <Contact contactForm={props.contactForm} />
       </SectionContainer>
     </div>
   );
