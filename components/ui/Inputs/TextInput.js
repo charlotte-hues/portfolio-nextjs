@@ -49,7 +49,7 @@ const Field = styled.div`
         }
 
         &::placeholder {
-            color: ${({theme}) => theme.colors.primary}99;
+            color: ${({theme}) => theme.colors.primary};
         }
 
         &::-moz-selection { background: ${({theme}) => theme.colors.primary};}

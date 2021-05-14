@@ -13,7 +13,7 @@ export const lightTheme = {
         background: "#FAF9FB",
         primary: "#2E3440",
         secondary: "#2E3440",
-        highlight: '#B48EAD',
+        highlight: '#8B5A82',
     },
     transition: {...transitions  },
 };
@@ -22,7 +22,7 @@ export const lightTheme = {
 export const darkTheme = {
     colors: {
         background: "#2E3440",
-        primary: "#B48EAD",
+        primary: "#C2A3BC",
         secondary: "#7E6A81",
         highlight: '#E5E9F0',
     },
