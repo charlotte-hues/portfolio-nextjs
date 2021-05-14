@@ -10,32 +10,7 @@ export default function Home() {
   const [formSuccess, setFormSuccess] = useState(false);
   const [formError, setFormError] = useState(false);
 
-    const handleSubmit = async (data) => {
-    
-      // const options = {
-      //   path: "/api/sendMail",
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //     "Content-Length": data.length,
-      //   },
-      // };
-
-      // const req = https.request(options, (res) => {
-      //   // console.log(`statusCode: ${res.statusCode}`);
-  
-      //   res.on("data", (d) => {
-      //     // process.stdout.write(d);
-      //     // console.log("data  from API >> ", JSON.parse(d));
-      //   });
-      // });
-
-      // req.on("error", (error) => {
-      //   setFormError(true);
-      // }) 
-
-      // req.write(data);
-      // req.end();
+    const handleSubmit = (data) => {
 
       fetch('/api/contact', {
         method: 'POST',

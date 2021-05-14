@@ -8,21 +8,23 @@ export default function Home() {
   const [formSuccess, setFormSuccess] = useState(false);
   const [formError, setFormError] = useState(false);
 
-    const handleSubmit = (data) => {
+  const handleSubmit = (data) => {
+
     fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-        'Accept': 'application/json, text/plain, */*',
-        'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    }).then((res) => {
-        console.log(res)
-        if (res.status === 200) {
-        setFormSuccess(true);
-        } else {setFormError(true)}
-    })
-    }
+      method: 'POST',
+      headers: {
+      'Accept': 'application/json, text/plain, */*',
+      'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+  })
+  .then((res) => {
+      console.log(res)
+      if (res.status === 200) {
+      setFormSuccess(true);
+      } else {setFormError(true)}
+  })
+  }
 
     const handleErrorConfirm = (e) => {
     e.preventDefault();
