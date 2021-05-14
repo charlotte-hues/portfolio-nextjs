@@ -1,7 +1,7 @@
 import Head from 'next/head'
 
 import Homepage from '../../components/sections/Home/Home';
-import useContactForm from '../../components/shared/ContactFormHook';
+import useContactForm from '../../components/shared/hooks/useContactForm';
 
 export default function Home() {
 
