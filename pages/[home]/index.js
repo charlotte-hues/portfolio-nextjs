@@ -45,12 +45,12 @@ export default function Home() {
         },
         body: JSON.stringify(data)
     })
-    // .then((res) => {
-    //     console.log(res)
-    //     if (res.status === 200) {
-    //     setFormSuccess(true);
-    //     } else {setFormError(true)}
-    // })
+    .then((res) => {
+        console.log(res)
+        if (res.status === 200) {
+        setFormSuccess(true);
+        } else {setFormError(true)}
+    })
     }
 
     const handleErrorConfirm = (e) => {
