@@ -1,5 +1,4 @@
-
-async function sendMail(req) {
+async function handler(req, res) {
 
   require('dotenv').config()
   let nodemailer = require('nodemailer')
@@ -21,19 +20,17 @@ async function sendMail(req) {
     ${req.body.email}</p>`
   }
 
-  return transporter.sendMail(mailData);
-}
+  transporter.sendMail(mailData, (err, data) => {
+    if (err) {
+      console.log(err);
+      res.status(500).json({message: "error" + JSON.stringify(err)});
+      return;
+    } else {
+      console.log("mail send");
+      res.send("success");
+    }
+});
 
-async function handler(req, res) {
-
-  try {
-    await sendMail(req);
-  } catch (error) {
-    res.status(500).json({message: "Send email failed"});
-    return;
-  }
-
-  res.status(200).json({message: "sent email"});
 }
 
 export default handler;
