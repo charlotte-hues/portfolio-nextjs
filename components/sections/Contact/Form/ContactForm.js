@@ -25,6 +25,7 @@ const ContactForm = (props) => {
 
   const handleSubmit = e => {
     e.preventDefault();
+    setFormIsValid(false);
     const formData = {};
     for (let formEl in contactForm) {
       formData[formEl] = contactForm[formEl].value;

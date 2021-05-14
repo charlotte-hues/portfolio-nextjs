@@ -14,6 +14,7 @@ function ContactForm() {
         },
         body: JSON.stringify(data)
     }).then((res) => {
+        console.log(res)
         if (res.status === 200) {
         setFormSuccess(true);
         } else {setFormError(true)}

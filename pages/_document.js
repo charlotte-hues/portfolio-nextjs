@@ -34,13 +34,6 @@ export default class MyDocument extends Document {
         <Head>
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet" />
-
-          <meta name="theme-color" content="#2E3440" />
-          <meta
-            name="description"
-            content="Creative Developer | Designer | Liverpool"
-          />
-          <title>Charlotte Hughes</title>
         </Head>
         <body>
           <Main />

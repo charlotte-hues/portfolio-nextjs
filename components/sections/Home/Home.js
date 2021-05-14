@@ -25,7 +25,6 @@ const Home = props => {
       if (location.asPath === "/contact") {
         scrollToRef("#contact", 110);
       } else if (location.asPath === "/work") {
-        console.log("workd")
         scrollToRef("#work", 0);
       } else {
         scrollToRef("#home", 110);
