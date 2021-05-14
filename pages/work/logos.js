@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Head from 'next/head';
 
 import ProjectCard from "../../components/ui/project/ProjectCard";
 import logofolioData from "../../components/sections/Work/logos/logofolioData";
@@ -93,7 +94,16 @@ const LogosProject = () => {
     return logos
   };
 
-  return <Logos/>;
+  return (<>
+    <Head>
+        <meta
+            name="description"
+            content="A collection of logos created by Charlotte Hughes for various companies"
+          />
+          <title>Logo Collection</title>
+        </Head>
+  <Logos/>
+  </>);
 };
 
 export default LogosProject;

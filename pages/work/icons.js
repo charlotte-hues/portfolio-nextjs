@@ -1,5 +1,6 @@
 import React, {useContext} from "react";
 import styled, {ThemeContext} from "styled-components";
+import Head from 'next/head';
 
 import ProjectCard from "../../components/ui/project/ProjectCard";
 import iconData from "../../components/sections/Work/icons/IconsProjectData";
