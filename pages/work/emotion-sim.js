@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Head from 'next/head'
 
 import * as images from '../../components/sections/Work/emotionSim/images';
 import Emotions, { EmotionsDescription } from '../../components/sections/Work/emotionSim/emotions/emotions';
@@ -19,6 +20,13 @@ const EmotionSim = () => {
     
     return (
         <>
+        <Head>
+        <meta
+            name="description"
+            content="A project visualising Robert Plutchik's theory of emotions"
+          />
+          <title>Emotion Simulator</title>
+        </Head>
         {images.MissingTheBusVideo}   
         <Container>   
           
