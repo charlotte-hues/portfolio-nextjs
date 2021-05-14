@@ -90,7 +90,7 @@ const ContactLinks = () => {
     return (
         <Container>
         {links.map(link => (
-            <Link key={link.name} href={link.href} target="_blank" afterCont={link.name}>
+            <Link key={link.name} href={link.href} rel="noopener" target="_blank" afterCont={link.name}>
                 <h4>{link.name}</h4>
                 <Arrow right size="1.3rem" />
             </Link>
