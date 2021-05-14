@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Head from 'next/head';
 
 import * as images from '../../components/sections/Work/icb/icbImagesAndVideo';
 import ProjectCard from "../../components/ui/project/ProjectCard";
@@ -34,6 +35,13 @@ const InfiniteColoringBook = () => {
     
     return (
         <>
+        <Head>
+        <meta
+            name="description"
+            content="A web app created during lockdown to allow users to create their own patterns that they can print off and color in."
+          />
+          <title>The Infinite Coloring Book</title>
+        </Head>
         <Container>      
             {images.Logo}
             {images.MockUp}
