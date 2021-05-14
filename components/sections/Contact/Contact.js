@@ -17,8 +17,8 @@ const Container = styled.div`
   }
 `;
 
-const Contact = () => {
-
+const Contact = (props) => {
+  console.log("rendered")
   return (
     <Container>
       <hr/>
@@ -26,7 +26,7 @@ const Contact = () => {
       <ContactLinks/>
       <hr/>
       <h3>GET IN TOUCH</h3>
-      <ContactForm />
+      <ContactForm onContactSubmit={props.onContactSubmit} formSuccess={props.formSuccess} />
     </Container>
   );
 };

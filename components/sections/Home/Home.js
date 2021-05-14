@@ -40,7 +40,7 @@ const Home = props => {
         <Work />
       </SectionContainer>
       <SectionContainer id="contact" ref={contactRef}>
-        <Contact />
+        <Contact onContactSubmit={props.onContactSubmit} formSuccess={props.formSuccess}/>
       </SectionContainer>
     </div>
   );

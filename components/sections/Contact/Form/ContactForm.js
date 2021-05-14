@@ -1,15 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-// import emailjs from 'emailjs-com';
 
 import blankForm from './blankContactForm';
 import TextInput from '../../../ui/Inputs/TextInput';
 import {updateObject, checkValidity} from '../../../shared/utility/formTool';
-import Button, {Gap} from '../../../ui/Inputs/Button';
-import Modal from '../../../ui/Modal/Modal';
-import Arrow from '../../../ui/Icons/ArrowIcon';
-import mailToFormatter from '../../../shared/utility/mailToFormatter';
-
+import Button from '../../../ui/Inputs/Button';
+ 
 
 const Form = styled.form`
   display: flex;
@@ -17,30 +13,9 @@ const Form = styled.form`
   justify-content: space-between;
 `;
 
-const Bold = styled.span`
-  color: ${({theme}) => theme.colors.highlight};
-  font-weight: 900;
-  cursor: text;
-  user-select: all;
-  line-height: 2rem;
-`
-
-const ContactForm = () => {
+const ContactForm = ({onContactSubmit, formSuccess}) => {
   const [contactForm, setContactForm] = useState(blankForm);
   const [FormIsValid, setFormIsValid] = useState(false);
-  const [formSuccess, setFormSuccess] = useState(false);
-  const [formError, setFormError] = useState(false);
-
-  const handleErrorConfirm = (e) => {
-    e.preventDefault();
-    setFormError(false);
-  };
-
-  const handleSuccessConfirm = (e) => {
-    e.preventDefault();
-    setFormSuccess(false);
-    clearForm();
-  };
 
   const clearForm = () => {
     setContactForm(blankForm);
@@ -54,49 +29,11 @@ const ContactForm = () => {
       formData[formEl] = contactForm[formEl].value;
     }
 
-    // emailjs.send("default_service", "portfolioSiteTemplate", formData, "user_bveJBfqBpdxSpDQGU6thD")
-    //     .then((result) => {
-    //         setFormSuccess(true);
-    //     }, (error) => {
-    //         setFormError(true);
-    //   });
+    onContactSubmit(formData);
+
   };
 
-  const SuccessModal = (
-    <Modal 
-    show={formSuccess} 
-    header="Message Sent"
-    onSubmit={handleSuccessConfirm}
-    onCancel={handleSuccessConfirm}
-    footer={<Button invert submit>OKAY</Button>}
-    >
-      Thanks for getting in touch, I'll get back to you as soon as possible.
-    </Modal> 
-  );
-
-  const ErrorModal = (
-    <Modal 
-    show={formError} 
-    header="Problem Sending Message"
-    onSubmit={handleErrorConfirm}
-    onCancel={handleErrorConfirm}
-    footer={<Button submit invert>OKAY</Button>}
-    >
-      Your message hasn't sent, please try again.
-      <br/>
-      <br/>
-      Alternatively, you can email me directly at: <Bold>{
-      String( 'hues.charlotte^gmail.com' ).replace('^', '@') }
-      </Bold> 
-      <br/>
-      <br/>
-      <Button secondary submit onClick={() => window.open( String( `mailto:hues.charlotte^gmail.com?subject=Hello%20Charlotte&body=${mailToFormatter(contactForm.message.value)}` ).replace('^', '@'))} >
-        Email me
-        <Gap/>
-        <Arrow size="1.5rem" right/>
-      </Button>
-    </Modal> 
-  );
+  useEffect(() => formSuccess && clearForm(), [formSuccess])
 
   const inputChangedHandler = (e, input) => {
     const [valid, errors] = checkValidity(
@@ -133,8 +70,8 @@ const ContactForm = () => {
   
   return (
       <React.Fragment>
-        {SuccessModal}
-        {ErrorModal}
+        {/* {SuccessModal}
+        {ErrorModal} */}
         <Form onSubmit={handleSubmit}>
         {formElementsArray.map((input, i) => {
             const isValid = !input.config.changed || input.config.valid ;
