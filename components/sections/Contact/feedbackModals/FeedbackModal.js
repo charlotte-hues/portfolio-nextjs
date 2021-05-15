@@ -41,10 +41,10 @@ export const ErrorModal = (props) => (
       </Bold> 
       <br/>
       <br/>
-      <Button secondary submit onClick={() => window.open( String( `mailto:hues.charlotte^gmail.com?subject=Hello%20Charlotte&body=${mailToFormatter(contactForm.message.value)}` ).replace('^', '@'))} >
+      {/* <Button secondary submit onClick={() => window.open( String( `mailto:hues.charlotte^gmail.com?subject=Hello%20Charlotte&body=${mailToFormatter(contactForm.message.value)}` ).replace('^', '@'))} >
         Email me
         <Gap/>
         <Arrow size="1.5rem" right/>
-      </Button>
+      </Button> */}
     </Modal> 
   );

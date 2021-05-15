@@ -18,13 +18,17 @@ async function handler (req, res) {
     html: message.replace(/\r\n/g, '<br>')
   }
 
-  try {
+  const isValid = req.body.name !== undefined || req.body.email !== undefined || req.body.message !== undefined;
+
+  if(isValid) {
+    try {
     await mail.send(data);
     console.log("*************** SUCCESS ***************")
   } catch (error) {
     console.log("*************** ERROR ***************")
     res.status(500).json({message: error.toString()});
     return;
+  }
   }
 
   res.status(200).json({status: "Ok"})
