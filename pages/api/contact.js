@@ -2,11 +2,7 @@ const mail = require('@sendgrid/mail');
 
 mail.setApiKey(process.env.SENDGRID_API_KEY);
 
-async function sendMail(data) {
-  return mail.send(data)
-}
-
- async function handler(req, res) {
+async function handler (req, res) {
 
   const message = `
     Name: ${req.body.name}\r\n
@@ -17,18 +13,19 @@ async function sendMail(data) {
   const data = {
     to: "hues.charlotte@gmail.com",
     from: "charlottehughesportfolio@gmail.com",
-    subject: "New web form message!",
+    subject: "New web form message from " + req.body.name + "!",
     text: message,
     html: message.replace(/\r\n/g, '<br>')
   }
 
   try {
-    await sendMail(data);
+    await mail.send(data);
+    console.log("*************** SUCCESS ***************")
   } catch (error) {
-    res.status(516).json({message: "Send email failed"})
+    console.log("*************** ERROR ***************")
+    res.status(500).json({message: "Send email failed"});
+    return
   }
-
-  // mail.send(data);
 
   res.status(200).json({status: "Ok"})
 

@@ -9,7 +9,18 @@ export default function Home() {
   const [formSuccess, setFormSuccess] = useState(false);
   const [formError, setFormError] = useState(false);
 
-    const handleSubmit = (data) => {
+  const handleServerResponse = (ok, msg) => {
+    console.log(msg)
+    if (ok) {
+      if(msg.status === 200) {
+        setFormSuccess(true);
+      } else setFormError(true)
+    } else {
+      setFormError(true)
+    }
+  }  
+  
+  const handleSubmit = (data, msg) => {
 
       fetch('/api/contact', {
         method: 'POST',
@@ -20,11 +31,9 @@ export default function Home() {
         body: JSON.stringify(data)
     })
     .then((res) => {
-        console.log(res)
-        if (res.status === 200) {
-        setFormSuccess(true);
-        } else {setFormError(true)}
+      handleServerResponse(true, res)
     })
+    .catch((error) => handleServerResponse(false, error))
     }
 
     const handleErrorConfirm = (e) => {
