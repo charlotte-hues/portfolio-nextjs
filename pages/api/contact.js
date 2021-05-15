@@ -23,8 +23,8 @@ async function handler (req, res) {
     console.log("*************** SUCCESS ***************")
   } catch (error) {
     console.log("*************** ERROR ***************")
-    res.status(500).json({message: "Send email failed"});
-    return
+    res.status(500).json({message: error.toString()});
+    return;
   }
 
   res.status(200).json({status: "Ok"})
