@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import {useState} from 'react'
-import https from "https";
 
 import Homepage from '../../components/sections/Home/Home';
 
