@@ -1,8 +1,12 @@
 const mail = require('@sendgrid/mail');
+const RequestIp = require('@supercharge/request-ip')
+
+
 
 mail.setApiKey(process.env.SENDGRID_API_KEY);
 
 async function handler (req, res) {
+  const ip = RequestIp.getClientIp(req)
 
   const message = `
     Name: ${req.body.name}\r\n
@@ -21,9 +25,10 @@ async function handler (req, res) {
   try {
     await mail.send(data);
     console.log("*************** SUCCESS ***************")
+    console.log(ip);
   } catch (error) {
     console.log("*************** ERROR ***************")
-    res.status(500).json({message: error.toString()});
+    res.status(500).json({message: `${error.toString()} ipAddress: ${ip}`});
     return;
   }
 
