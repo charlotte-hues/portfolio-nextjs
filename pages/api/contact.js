@@ -12,7 +12,7 @@ async function handler (req, res) {
 
   const data = {
     to: "hues.charlotte@gmail.com",
-    from: "charlottehughesportfolio@gmail.com",
+    from: "portfolio@charlottehughes.uk",
     subject: "New web form message from " + req.body.name + "!",
     text: message,
     html: message.replace(/\r\n/g, '<br>')
