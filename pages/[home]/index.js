@@ -1,20 +1,27 @@
 import Head from 'next/head'
 
+import {useRouter} from 'next/router';
+
 import Homepage from '../../components/sections/Home/Home';
 import useContactForm from '../../components/shared/hooks/useContactForm';
+import {NavLinks as routes} from '../../components/shared/routes';
 
 export default function Home() {
   
   const contactForm = useContactForm();
+
+  const location = useRouter();
+
+  const metaData = routes.find(r => r.path === location.asPath);
 
   return (
     <>
     <Head>
       <meta
         name="description"
-        content="Creative Developer | Designer | Liverpool"
+        content={metaData.description}
       />
-      <title>Charlotte Hughes</title>
+      <title>{metaData.title}</title>
     </Head>
     <Homepage contactForm={contactForm} />
     </>

@@ -32,10 +32,12 @@ const NavLi = styled("div")`
 
 const ToolbarNavItem = ({link, children }) => {
   const location = useRouter();
-  const active = location.asPath === link;
+  const active = `/${location.query.home}` === link;
 
   return (
-    <Link href={link} scroll={false} >
+    <Link href={link}
+    scroll={false} 
+    >
     <NavLi 
     className={active ? "Active" : null}
     >

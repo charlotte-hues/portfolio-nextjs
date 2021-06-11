@@ -31,15 +31,18 @@ const NavigationItem = React.forwardRef(({link, children }, ref) => {
   const startColor = active ? themeContext.colors.highlight : themeContext.colors.primary;
 
   return (
-    <Link href={link} scroll={false}>
-    <NavLi
-    ref={ref}
-    style={{color: startColor}}
-    >
-      <h2>
-      {children}
-      </h2>
-    </NavLi>
+    <Link 
+      href={link}
+      scroll={false}
+      >
+        <NavLi
+        ref={ref}
+        style={{color: startColor}}
+        >
+          <h2>
+          {children}
+          </h2>
+        </NavLi>
     </Link>
 )});
 

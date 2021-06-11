@@ -7,8 +7,6 @@ export default function Home() {
 
   const contactForm = useContactForm();
 
-  console.log("menuItems")
-
   return (
     <>
     <Head>
