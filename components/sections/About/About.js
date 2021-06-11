@@ -6,7 +6,7 @@ const Container = styled.div`
   max-width: 600px;
   max-height: 600px;
   height: auto;
-  margin: 80px auto 100px;
+  margin: 80px auto 80px;
 
 `;
 
