@@ -12,11 +12,7 @@ export default function Home() {
 
   const location = useRouter();
 
-  console.log(location.query);
-
   const metaData = routes.find(r => r.path === location.asPath);
-
-  console.log(metaData);
 
   return (
     <>
