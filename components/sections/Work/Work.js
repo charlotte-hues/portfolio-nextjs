@@ -14,7 +14,7 @@ const Container = styled.div`
   padding-top: 30px;
 
   @media ${device.laptop} {
-      padding-top: 20px;
+      padding-top: 40px;
   }
 `;
 

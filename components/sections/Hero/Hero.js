@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import HeroPattern from '../Hero/HeroPattern';
+import HeroPattern from './HeroPattern';
 
 const Container = styled.div`
   position: relative;

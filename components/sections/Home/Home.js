@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {useRouter} from 'next/router'
 import gsap from 'gsap';
 
-import About from "../About/About";
+import Hero from "../Hero/Hero";
 import Work from "../Work/Work";
 import Contact from "../Contact/Contact";
 
@@ -35,7 +35,7 @@ const Home = props => {
   return (
     <div>
       <SectionContainer id="home" ref={homeRef}>
-        <About />
+        <Hero />
       </SectionContainer>
       <SectionContainer id="work" ref={workRef}>
         <Work />
