@@ -14,7 +14,7 @@ export const NavLinks = [
         showInMenu: true,
         showInToolbar: true,       
         title: "About Designer and Creative Developer Charlotte Hughes",
-        description: "Designer and Creative Developer based in the UK",
+        description: "My current design position and location",
         animate: true,
     },
     {

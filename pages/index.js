@@ -12,9 +12,9 @@ export default function Home() {
     <Head>
       <meta
         name="description"
-        content="Creative Developer | Designer | Liverpool"
+        content="Designer and Creative Developer based in the UK"
       />
-      <title>Charlotte Hughes</title>
+      <title>Charlotte Hughes Designer and Creative Developer</title>
     </Head>
     <Homepage contactForm={contactForm} />
     </>

@@ -21,7 +21,7 @@ export default function Home() {
         name="description"
         content={metaData ? metaData.description : "Designer and Creative Developer based in the UK"}
       />
-      <title>{metaData ? metaData.title : "Charlotte Hughes Designer and Creative Developer"}</title>
+      <title>{metaData ? metaData.title : "Charlotte Hughes - Home"}</title>
     </Head>
     <Homepage contactForm={contactForm} />
     </>
