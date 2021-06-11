@@ -14,7 +14,7 @@ export default function Home() {
         name="description"
         content="Designer and Creative Developer based in the UK"
       />
-      <title>Charlotte Hughes Designer and Creative Developer</title>
+      <title>Charlotte Hughes - Designer and Creative Developer</title>
     </Head>
     <Homepage contactForm={contactForm} />
     </>

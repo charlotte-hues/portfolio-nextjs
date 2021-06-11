@@ -19,7 +19,7 @@ export default function Home() {
     <Head>
       <meta
         name="description"
-        content={metaData ? metaData.description : "Designer and Creative Developer based in the UK"}
+        content={metaData ? metaData.description : "Designer and Creative Developer based in Chester, UK"}
       />
       <title>{metaData ? metaData.title : "Charlotte Hughes - Home"}</title>
     </Head>

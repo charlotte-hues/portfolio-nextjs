@@ -4,7 +4,7 @@ export const NavLinks = [
         path: "/",
         showInMenu: true,
         showInToolbar: true,        
-        title: "Charlotte Hughes Designer and Creative Developer",
+        title: "Charlotte Hughes - Designer and Creative Developer",
         description: "Designer and Creative Developer based in the UK",
         animate: true,
     },
