@@ -10,12 +10,11 @@ const Container = styled.div`
   position: relative;
   width: 100%;
 
-
-   
   margin: 20px 0 40px;
   overflow: hidden;
   max-width: 600px;
   align-self: center;
+  cursor: pointer;
 
   @media ${device.laptop} {
     align-self: ${props => props.align}

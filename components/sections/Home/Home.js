@@ -4,6 +4,7 @@ import {useRouter} from 'next/router'
 import gsap from 'gsap';
 
 import Hero from "../Hero/Hero";
+import About from '../About/About';
 import Work from "../Work/Work";
 import Contact from "../Contact/Contact";
 
@@ -18,12 +19,15 @@ const scrollToRef = (ref, offset) => gsap.to(window, {duration: 1, scrollTo: { y
 const Home = props => {
   const contactRef = useRef(null);
   const homeRef = useRef(null);
+  const aboutRef = useRef(null);
   const workRef = useRef(null);
   const location = useRouter();
 
   useEffect(() => {   
       if (location.asPath === "/contact") {
         scrollToRef("#contact", 110);
+      } else if (location.asPath === "/about") {
+        scrollToRef("#about", 110);
       } else if (location.asPath === "/work") {
         scrollToRef("#work", 0);
       } else {
@@ -36,6 +40,9 @@ const Home = props => {
     <div>
       <SectionContainer id="home" ref={homeRef}>
         <Hero />
+      </SectionContainer>
+      <SectionContainer id="about" ref={aboutRef}>
+        <About />
       </SectionContainer>
       <SectionContainer id="work" ref={workRef}>
         <Work />

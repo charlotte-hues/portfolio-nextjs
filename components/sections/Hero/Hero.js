@@ -12,7 +12,7 @@ const Container = styled.div`
 
 `;
 
-const About = () => {
+const Hero = () => {
   return (
     <Container>   
       <HeroPattern/> 
@@ -20,4 +20,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Hero;
