@@ -4,8 +4,17 @@ export const NavLinks = [
         path: "/",
         showInMenu: true,
         showInToolbar: true,        
-        title: "Portfolio of Charlotte Hughes",
-        description: "Designer and Creative Developer",
+        title: "Charlotte Hughes Designer and Creative Developer",
+        description: "Designer and Creative Developer based in the UK",
+        animate: true,
+    },
+    {
+        key: "about",
+        path: "/about",
+        showInMenu: false,
+        showInToolbar: false,       
+        title: "About Designer and Creative Developer Charlotte Hughes",
+        description: "Designer and Creative Developer based in the UK",
         animate: true,
     },
     {
@@ -13,8 +22,8 @@ export const NavLinks = [
         path: "/work",
         showInMenu: true,
         showInToolbar: true,
-        title: "Portfolio of Charlotte Hughes",
-        description: "Designer and Creative Developer",
+        title: "A selection of work including Animation, Web Design and Branding",
+        description: "Some recent projects created by Charlotte Hughes",
         animate: true,
     },
     {
@@ -22,8 +31,8 @@ export const NavLinks = [
         path: "/contact",
         showInMenu: true,
         showInToolbar: true,        
-        title: "Portfolio of Charlotte Hughes",
-        description: "Designer and Creative Developer",
+        title: "Get in touch",
+        description: "Get in touch if you'd like to discuss a project or just say hello",
         animate: false,
     }
     ];
