@@ -3,7 +3,7 @@ export const NavLinks = [
         key: "home",
         path: "/",
         showInMenu: true,
-        showInToolbar: false,        
+        showInToolbar: true,        
         title: "Portfolio of Charlotte Hughes",
         description: "Designer and Creative Developer",
         animate: true,
