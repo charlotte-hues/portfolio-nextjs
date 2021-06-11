@@ -1,19 +1,15 @@
 import styled from "styled-components";
 
-import device from '../../shared/device/device';
 import HeroPattern from '../Hero/HeroPattern';
 
 const Container = styled.div`
   position: relative;
   width: 100%;
-  max-width: 700px;
-  max-height: 700px;
+  max-width: 600px;
+  max-height: 600px;
   height: auto;
   margin: 80px auto 10px;
 
-  @media ${device.laptop} {
-      margin-bottom: 100px;
-  }
 `;
 
 const About = () => {

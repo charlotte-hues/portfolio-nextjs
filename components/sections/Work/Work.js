@@ -11,10 +11,10 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding-top: 80px;
+  padding-top: 30px;
 
   @media ${device.laptop} {
-      padding-top: 100px;
+      padding-top: 20px;
   }
 `;
 

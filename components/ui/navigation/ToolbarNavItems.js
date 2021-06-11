@@ -21,8 +21,6 @@ const NavItemsContainer = styled.nav`
 const ToolbarNavItems = () => {
     const menuItemsArr = NavLinks.filter(r => r.showInToolbar);
 
-    console.log(menuItemsArr);
-
     const menuItems = menuItemsArr.map(r => {
       return <NavigationItem  link={r.path} key={r.key} active>
               {r.key.toUpperCase()}
