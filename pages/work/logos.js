@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import Head from 'next/head';
 
 import ProjectCard from "../../components/ui/project/ProjectCard";
 import logofolioData from "../../components/sections/Work/logos/logofolioData";
 import {useTheme} from '../../styles/ThemeContext';
+import useProjectWrapper from "../../components/sections/Work/UseProjectWrapper";
+
 
 const IconSetContainer = styled(ProjectCard)`
   display: flex;
@@ -94,16 +95,15 @@ const LogosProject = () => {
     return logos
   };
 
-  return (<>
-    <Head>
-        <meta
-            name="description"
-            content="A collection of logos created by Charlotte Hughes for various companies"
-          />
-          <title>Logo Collection</title>
-        </Head>
-  <Logos/>
-  </>);
+  const Project = (
+    <>
+    <Logos />
+    </>
+  )
+
+  const WrappedProject = useProjectWrapper(Project)
+    
+  return WrappedProject;
 };
 
 export default LogosProject;

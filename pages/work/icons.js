@@ -4,6 +4,8 @@ import Head from 'next/head';
 
 import ProjectCard from "../../components/ui/project/ProjectCard";
 import iconData from "../../components/sections/Work/icons/IconsProjectData";
+import useProjectWrapper from "../../components/sections/Work/UseProjectWrapper";
+
 
 const IconSetContainer = styled(ProjectCard)`
   display: flex;
@@ -54,16 +56,9 @@ const IconsProject = () => {
     return arr.concat(el);
   }, []);
 
-  return <>
-  <Head>
-        <meta
-            name="description"
-            content="A collection of icons created by Charlotte Hughes for various projects"
-          />
-          <title>Icon Collection</title>
-        </Head>
-  {IconSets}
-  </>;
+const WrappedProject = useProjectWrapper(IconSets)
+    
+return WrappedProject
 };
 
 export default IconsProject;

@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import Head from 'next/head';
 
 import * as images from '../../components/sections/Work/icb/icbImagesAndVideo';
 import ProjectCard from "../../components/ui/project/ProjectCard";
+import useProjectWrapper from "../../components/sections/Work/UseProjectWrapper";
 
 
 const Container = styled(ProjectCard)`
@@ -33,15 +33,7 @@ const Step2 = (
 
 const InfiniteColoringBook = () => { 
     
-    return (
-        <>
-        <Head>
-        <meta
-            name="description"
-            content="A web app created during lockdown to allow users to create their own patterns that they can print off and color in."
-          />
-          <title>The Infinite Coloring Book</title>
-        </Head>
+    const Project = (
         <Container>      
             {images.Logo}
             {images.MockUp}
@@ -54,8 +46,11 @@ const InfiniteColoringBook = () => {
             {images.Ipad}      
             {images.InfiniteCombinations}      
         </Container>
-        </>
     )
+
+    const WrappedProject = useProjectWrapper(Project)
+    
+    return WrappedProject;
 }
 
 export default InfiniteColoringBook;

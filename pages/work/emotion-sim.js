@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Head from 'next/head'
+
 
 import * as images from '../../components/sections/Work/emotionSim/images';
 import Emotions, { EmotionsDescription } from '../../components/sections/Work/emotionSim/emotions/emotions';
@@ -8,6 +8,7 @@ import WheelOfEmotions from '../../components/sections/Work/emotionSim/wheel/Whe
 import WireframeGifs from '../../components/sections/Work/emotionSim/wireframeGifs';
 
 import ProjectCard from "../../components/ui/project/ProjectCard";
+import useProjectWrapper from "../../components/sections/Work/UseProjectWrapper";
 
 const Container = styled(ProjectCard)`
     background: #F6EFEE url("/images/projects/emotionSim/911Background.png") top center repeat-y;
@@ -17,28 +18,25 @@ const Container = styled(ProjectCard)`
 `;
 
 const EmotionSim = () => { 
+
+    const Project = (
+        <React.Fragment>
+            {images.MissingTheBusVideo}   
+            <Container>   
+            
+                <Emotions/>
+                {EmotionsDescription}
+                {WheelOfEmotions}
+                <WireframeGifs/>           
+            </Container>
+            {images.Hill}
+            {images.closeUp}
+        </React.Fragment>
+        )
+
+    const WrappedProject = useProjectWrapper(Project)
     
-    return (
-        <>
-        <Head>
-        <meta
-            name="description"
-            content="A project visualising Robert Plutchik's theory of emotions"
-          />
-          <title>Emotion Simulator</title>
-        </Head>
-        {images.MissingTheBusVideo}   
-        <Container>   
-          
-            <Emotions/>
-            {EmotionsDescription}
-            {WheelOfEmotions}
-            <WireframeGifs/>           
-        </Container>
-        {images.Hill}
-        {images.closeUp}
-        </>
-    )
+    return WrappedProject
 }
 
 export default EmotionSim;
