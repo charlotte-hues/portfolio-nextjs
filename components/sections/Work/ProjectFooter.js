@@ -22,6 +22,8 @@ const LinkContainer = styled.div`
             opacity: 1;
         }
     }
+
+    
 `;
 
 const ProjectFooter = ({project}) => {
@@ -31,13 +33,16 @@ const ProjectFooter = ({project}) => {
     return (
         <LinkContainer>
                 <Link href={link}>
-                <h4 style={{display: 'inline-block', marginRight: "10px"}}>{`view next project - ${project.title}`}</h4>
+                    <h4 style={{display: 'inline-block', marginRight: "10px"}}>{`view next project - ${project.title}`}</h4>
                 </Link>
-                <div style={{alignSelf: "center"}}>
-                <Link href={link}>
-                    <Arrow size="32px" right/>
-                </Link>
+                <div style={{alignSelf: "center", marginBottom: "0.8em"}}>
+                    <Link href={link}>
+                        <Arrow size="32px" right/>
+                    </Link>
                 </div>
+                <Link href="/">
+                    Home
+                </Link>
         </LinkContainer>
     )
 };

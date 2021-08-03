@@ -1,6 +1,5 @@
-import React, {useContext} from "react";
-import styled, {ThemeContext} from "styled-components";
-import Head from 'next/head';
+import React from "react";
+import styled from "styled-components";
 
 import ProjectCard from "../../components/ui/project/ProjectCard";
 import iconData from "../../components/sections/Work/icons/IconsProjectData";
@@ -14,7 +13,7 @@ const IconSetContainer = styled(ProjectCard)`
   align-items: center;
   align-content: center;
   padding: 20px;
-  background-color: ${({theme}) => theme.colors.secondary};
+  background-color: #E5E9F0;
 `;
 
 const Container = styled.div`
@@ -28,8 +27,7 @@ const Container = styled.div`
 `;
 
 const IconSet = ({data}) => {
-  const theme = useContext(ThemeContext);
-  const iconColor = theme.colors.highlight;
+  const iconColor = "#2E3440";
 
   return (
     <IconSetContainer>

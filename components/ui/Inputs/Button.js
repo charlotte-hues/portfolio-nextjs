@@ -26,7 +26,7 @@ const StyledButton = styled.button`
     }
 
     &:disabled {
-        background: ${({theme}) => theme.colors.secondary};
+        background: ${({theme}) => theme.colors.primary};
         opacity: 0.6;
         cursor: default;
     }
